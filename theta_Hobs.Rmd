@@ -1,0 +1,47 @@
+---
+title: "theta_het"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Theta and Hobs taken from angsd / realSFS
+### South (FL, SC, NC) has greater theta than do New England pops (MA, RI, NH)
+
+```{r echo = F}
+library(visreg);library(reshape)
+dat <- read.csv('data/theta_Hobs.csv')
+dat$reg <- ifelse(dat$State%in%c("FL","SC","NC"),"S","N")
+m <- lm(Theta~reg,data=dat)
+visreg(m)
+summary(m)
+```
+
+### Hobs is not signif different
+
+```{r echo = F}
+m <- lm(Hobs~reg,data=dat)
+visreg(m)
+summary(m)
+md <- melt(dat[,c("reg","Theta","Hobs")])
+print(cast(md,reg~variable,mean))
+
+```
+
+### When Florida is ignored, both theta and Hobs are significantly greater in the south.
+
+```{r echo = F}
+dat2 <- dat[!dat$State=="FL",]
+m <- lm(Theta~reg,data=dat2)
+visreg(m)
+summary(m)
+m <- lm(Hobs~reg,data=dat2)
+visreg(m)
+summary(m)
+md <- melt(dat2[,c("reg","Theta","Hobs")])
+print(cast(md,reg~variable,mean))
+```
+
+

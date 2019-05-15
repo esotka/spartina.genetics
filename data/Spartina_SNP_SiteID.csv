@@ -1,0 +1,18 @@
+Site_ID,Site Name,State,Tall.Short,Salinity,Notes,Date collected,lat,long,who
+FLS,St. Joes Bay,FL,Short,,,12-Aug,29.91641667,-84.50655,Robyn Zerebecki
+FLT,St. Joes Bay,FL,Tall,,,12-Aug,29.91656667,-84.50606667,Robyn Zerebecki
+SWS,Sweeney,MA,Short,,,15-Oct,42.72182,-70.84873,Torrie Hanley and Randall Hughes
+SWT,Sweeney,MA,Tall,,,15-Oct,42.72211,-70.84795,Torrie Hanley and Randall Hughes
+WES,West,MA,Short,,,15-Oct,42.73952,-70.84874,
+WET,West,MA,Tall,,,15-Oct,42.73934,-70.84845,
+NCC,Middle Marsh,NC,,,,12-Aug,34.689328,-76.621075,Alyssa Popowich
+NHH,Great Bay,NH,,,,12-Jul,43.091489,-70.864721,Jeb Byers
+RIS,Cole State Park,RI,Short,,,12-Aug,41.68175,-71.29807,Alyssa Demko
+RIT,Cole State Park,RI,Tall,,,12-Aug,41.68153,-71.29826,Alyssa Demko
+SBI,Bowens Island,SC,Short,,from RH common garden experiment,14-Oct,32.68014,-79.954219,Meredith Smylie
+TBI,Bowens Island,SC,Tall,,from RH common garden experiment,14-Oct,32.680371,-79.953346,Meredith Smylie
+SFB,Folly Beach,SC,Short,,from RH common garden experiment,14-Oct,32.644292,-79.965607,Meredith Smylie
+TFB,Folly Beach,SC,Tall,,from RH common garden experiment,14-Oct,32.645484,-79.967034,Meredith Smylie
+FJS,Fort Johnson,SC,Short,,samples from ES and NOT samples from RH common garden experiment,12-Aug,32.748867,-79.898527,Erik Sotka
+HWW,HWY7,SC,Tall,Low,,12-Aug,32.830558,-79.985244,Nicole Kollars
+SCT,Wapoo Cut,SC,Tall,High,,12-Aug,32.768875,-79.951294,Erik Sotka
