@@ -20,7 +20,7 @@ points(meta$long,meta$lat,col="black",pch=21,cex=1.6)
 points(meta$long,meta$lat,col=brewer.pal(7,"Dark2")[meta$State],pch=20,cex=2)
 text(x=c(-68.5,-68.5,-70.38893,-74.13525,-77.95095,-81.7),
      y=c(43.1,42.21079,40.8,34.48443,32.30089,29.89340),
-     c("NH","MA","RI","NC","SC","FLo"),adj=1)
+     c("NH","MA","RI","NC","SC","FL"),adj=1)
 box()
 
 ### PCA
