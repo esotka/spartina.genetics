@@ -19,7 +19,7 @@ colnames(gmat) <- ids
 sh <- c("SWS","WES","RIS","SBI","SFB","FLS")#,"FJS")
 ta <- c("SWT","WET","RIT","TBI","TFB","FLT")#,"SCT")
 site <- c("Sweeney, MA","West Marsh, MA","Cole State Park, RI",
-          "Bowens Island, SC", "Folly Island, SC","St. Joes Bay, FL")
+          "Bowens Island, SC", "Folly Beach, SC","St. Theresa, FL")
 a <- meta$State[match(ta,meta$Site_ID)]
 
 siteNICE.sh <- c("MASS","MAWS","RIS","SCBS","SCFS","FLS")
@@ -37,7 +37,7 @@ f <- f[6:1] # north to south
 fid <- c("inds.FL","inds.SFBTFB","inds.SBITBI","inds.RISRIT","inds.WESWET","inds.SWSSWT")
 fid <- fid[6:1] # north to south
 site <- c("Sweeney, MA","West Marsh, MA","Cole State Park, RI",
-          "Bowens Island, SC", "Folly Island, SC","St. Joes Bay, FL")
+          "Bowens Island, SC", "Folly Beach, SC","St. Theresa, FL")
 #tim6equal = c("#00008F", "#005AFF", "#23FFDC", "#ECFF13", "#FF4A00", "#800000")
 col.order <- list(c(1,2),c(1,2),c(1,2),c(2,1),c(2,1),c(1,2))
 #all <- c()

@@ -53,7 +53,8 @@ for (i in 1:length(filelist))
 fst.all$sites <- factor(fst.all$sites)
 xbar <- tapply(fst.all$fst,fst.all$sites,mean,na.rm=T)
 std <- tapply(fst.all$fst,fst.all$sites,sd,na.rm=T)
-xbar.out <- data.frame(xbar,std,type=fst.all$type[match(names(xbar),fst.all$sites)])
+sterr <- std/dim(tmp)[1]
+xbar.out <- data.frame(xbar,std,sterr,type=fst.all$type[match(names(xbar),fst.all$sites)])
 xbar.out <- xbar.out[complete.cases(xbar.out),]
 m <- lm(xbar~type,data=xbar.out)
 print(anova(m))
@@ -80,10 +81,13 @@ pdf('output/FstMeans.pdf',width=4,height=4)
 
 xbar.all <- tapply(xbar.out$xbar,xbar.out$type,mean)
 std.all <- tapply(xbar.out$xbar,xbar.out$type,sd)
-plot(x=1:2,xbar.all,xlim=c(0.5,2.5),ylim=c(0,.3),col=alpha(c("black","red"),.5),
+plot(x=1:2,xbar.all,xlim=c(0.5,2.5),ylim=c(0,.3),col="black",
      pch=20,cex=3,xaxt="n",xlab="",ylab="Fst")
-arrows(x0=1:2,y0=xbar.all+std.all,x1=1:2,y1=xbar.all-std.all,col=alpha(c("black","red"),.5),lwd=2,angle = 90,code = 3,length = .1)
-points(y=xbar.out$xbar,x=jitter((1:2)[xbar.out$type],1),col=c("black","red")[xbar.out$type],cex=.7)
-mtext(c("S vs T","Pop'ns < 5km"),at=1:2,side=1,col=c("black","red"),line=1)
-
+arrows(x0=1:2,y0=xbar.all+std.all,x1=1:2,y1=xbar.all-std.all,col=alpha("black",.5),lwd=2,angle = 90,code = 3,length = .1)
+x=jitter((1:2)[xbar.out$type],1)
+points(y=xbar.out$xbar,x,col="black",cex=.7)
+#segments(x,xbar.out$xbar+xbar.out$sterr,x,xbar.out$xbar-xbar.out$sterr)
+#c("black","red")[xbar.out$type]
+mtext(c("Short vs Tall","Marshes"),at=1:2,side=1,line=1)
+mtext(c("0.02-0.16 km","0.65-4.52 km"),at=1:2,side=1,line=2)
 dev.off()

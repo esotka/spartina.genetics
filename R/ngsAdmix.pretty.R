@@ -8,7 +8,7 @@ meta <- read.csv('data/Spartina_SNP_SiteID.csv')
 state <- meta$State[match(pop,meta$Site_ID)]
 siteorder.txt <-     c("FLS","FLT","SFB","TFB","SBI","TBI","FJS","HWW","SCT","NCC",
                        "RIS","RIT","SWS","SWT","WES","WET","NHH")
-siteorderNICE.txt <- c("FLS","FLT","SCFS","SCFT","SCBS","SCBT","SC1","SC2","SC3","NC1",
+siteorderNICE.txt <- c("FLS","FLT","SCFS","SCFT","SCBS","SCBT","SCFJ","SC2","SC3","NC1",
                        "RIS","RIT","MASS","MAST","MAWS","MAWT","NH1")
 siteorder <- match(pop,siteorder.txt)
 pop <- pop[order(siteorder)]
@@ -73,7 +73,7 @@ colorder <- list(
 
 for (k in 1:length(ks))
 {
-  dat <- read.delim(paste("data/",filelist[k],sep=""),sep=" ",header = F)
+  dat <- read.delim(paste("data/runs/",filelist[k],sep=""),sep=" ",header = F)
   dat <- dat[order(siteorder),]
   dat <- dat[,-(dim(dat)[2])]
   dat <- dat[,order(colorder[[k]])]
