@@ -3,7 +3,7 @@ rm(list=ls())
 library(snpStats)
 ind <- as.character(read.delim('data/indIDS.T.S.POPS.txt',header=F)[,1])
 #snps <- read.delim('data/')
-dat <- read.beagle('data/t.s.pops.beagle',header=T,nsnp = 2735,rownames = ind)
+dat <- read.beagle('data/t.s.pops.beagle.gz',header=T,nsnp = 2735,rownames = ind)
 out <- c()
 for (i in 1:length(ind))
 {
