@@ -6,9 +6,9 @@ These are the associated files and R code for the SNP dataset that are a part of
 
 1) "inds/"  
 Description: a set of files with individuals used in the analyses.  
-* "allpops_individualIDs_subset.csv" - set of 309 individuals - all sites.  
-* "indIDS.T.S.POPS.txt" - set of six marshes with tall-vs-short comparisons.  
-* "inds.FL" "inds.RISRIT" "inds.SBITBI" "inds.SFBTFB" "inds.SWSSWT" "inds.WESWET" - six marshes with tall-vs-short comparisons  
+a. "allpops_individualIDs_subset.csv" - set of 309 individuals - all sites.  
+b. "indIDS.T.S.POPS.txt" - set of six marshes with tall-vs-short comparisons.  
+c. "inds.FL" "inds.RISRIT" "inds.SBITBI" "inds.SFBTFB" "inds.SWSSWT" "inds.WESWET" - six marshes with tall-vs-short comparisons  
 
 2) "Spartina_SNP_SiteID.csv"  
 Description: meta-data for each location.  
