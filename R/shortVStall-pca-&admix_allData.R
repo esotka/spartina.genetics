@@ -9,7 +9,7 @@ library(RColorBrewer)
 ### PCA
 meta <- read.csv('data/Spartina_SNP_SiteID.csv')
 gprob<- read.table('data/spartinaNov2017.called.subset.mpgl')
-ids <- read.csv('data/allpops_individualIDs_subset.csv')[,2]
+ids <- read.csv('data/inds/allpops_individualIDs_subset.csv')[,2]
 pop <- substr(ids,1,3)
 reg <- meta$State[match(pop,meta$Site_ID)]
 
@@ -64,7 +64,7 @@ for (i in 1:6)
   tmp <- c()
   print(paste("data/admix.runs.ALLPOPS/",f[i],sep=""))
   tmp <- read.delim(paste("data/admix.runs.ALLPOPS/",f[i],sep=""),sep=" ",header = F)[,-(k+1)]
-  tmpids <- read.delim(paste("data/",fid[i],sep=""),sep=" ",header = F)
+  tmpids <- read.delim(paste("data/inds/",fid[i],sep=""),sep=" ",header = F)
   site1 <- substr(as.character(tmpids[,1]),1,3)
   siteNICE <- c(siteNICE.sh[i],siteNICE.ta[i])
   #all <- rbind(all,data.frame(ind=tmpids,site1,site2=site[i],q1=tmp$V1,q2=tmp$V2))

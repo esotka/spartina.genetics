@@ -3,7 +3,7 @@ library(fields)
 pdf('output/ngsAdmix.pretty.pdf',width=8.5,height=8)
 #quartz(width=8.5,height=8)
 par(mfrow=c(1,17),mar=c(0,0,0,0),xpd = TRUE)
-ids <- read.csv('data/allpops_individualIDs_subset.csv')[,2]
+ids <- read.csv('data/inds/allpops_individualIDs_subset.csv')[,2]
 pop <- substr(ids,1,3)
 meta <- read.csv('data/Spartina_SNP_SiteID.csv')
 state <- meta$State[match(pop,meta$Site_ID)]

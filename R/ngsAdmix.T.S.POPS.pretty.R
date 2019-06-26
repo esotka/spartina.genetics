@@ -2,7 +2,7 @@ rm(list=ls())
 library(fields)
 pdf('output/ngsAdmix.T.S.POPS.pretty.pdf',width=8,height=8)
 par(mfrow=c(1,16),mar=c(0,0,0,0),xpd = TRUE)
-ids <- read.delim('data/indIDS.T.S.POPS.txt',header = F)[,1]
+ids <- read.delim('data/inds/indIDS.T.S.POPS.txt',header = F)[,1]
 pop <- substr(ids,1,3)
 meta <- read.csv('data/Spartina_SNP_SiteID.csv')
 state <- meta$State[match(pop,meta$Site_ID)]

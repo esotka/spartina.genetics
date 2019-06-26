@@ -8,7 +8,7 @@ library(RColorBrewer)
 
 meta <- read.csv('data/Spartina_SNP_SiteID.csv')
 gprob<- read.table('data/spartinaNov2017.called.subset.mpgl')
-ids <- read.csv('data/allpops_individualIDs_subset.csv')[,2]
+ids <- read.csv('data/inds/allpops_individualIDs_subset.csv')[,2]
 pop <- substr(ids,1,3)
 reg <- meta$State[match(pop,meta$Site_ID)]
 
