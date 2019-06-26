@@ -21,10 +21,10 @@ Description: NGSadmix runs for all populations and tall-vs-short comparisons.
 
 ### Figure: PCAs  
 Based on genotype likelihoods of individuals embedded in the .mpgl file.  Uses the prcomp() to generate PCAs. there are four versions:  
-"R/map of spartina sites.R" and "output/map of spartina sites.pdf" - this includes all sites, and is coupled with a map of the east coast of the US.  
-"R/shortVStall-pca-allDATA.R" and "shortVStall-pca-allDATA.pdf" - this compares PCAs of tall-vs-short individuals within each of 6 marshes.     
-"R/shortVStall-pca_wout10.R" and "shortVStall-pca_wout10.pdf" - same as previous, but side-by-side compares when all data or the 10% outlier loci (by Fst) are removed.  
-"R/shortVStall-pca-&admix_allData.R" and "shortVStall-pca&admix_allDATA.pdf" - This does a side-by-side comparison of admixture plots and PCA for 6 marshes.    
+* "R/map of spartina sites.R" and "output/map of spartina sites.pdf" - this includes all sites, and is coupled with a map of the east coast of the US.  
+* "R/shortVStall-pca-allDATA.R" and "shortVStall-pca-allDATA.pdf" - this compares PCAs of tall-vs-short individuals within each of 6 marshes.     
+* "R/shortVStall-pca_wout10.R" and "shortVStall-pca_wout10.pdf" - same as previous, but side-by-side compares when all data or the 10% outlier loci (by Fst) are removed.  
+* "R/shortVStall-pca-&admix_allData.R" and "shortVStall-pca&admix_allDATA.pdf" - This does a side-by-side comparison of admixture plots and PCA for 6 marshes.    
 
 ### Figure: admixture plots  
 Based on NGSadmix analyses in angsd.  
