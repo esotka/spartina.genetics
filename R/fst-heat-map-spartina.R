@@ -2,7 +2,7 @@
 
 library(lattice);library(visreg);library(RColorBrewer)
 rm(list=ls())
-fst.all <- read.csv('data/fst.siteXpop.csv')
+fst.all <- read.csv('output/fst.siteXpop.csv')
 meta <- read.csv("data/Spartina_SNP_SiteID.csv")
 
 ### make site order matrix

@@ -29,13 +29,13 @@ for (i in 1:length(filelist.tvs))
   }
 ### sites <5km apart
 filelist <- c(
-  "data/fst/HWW.SBITBI.pops.fst",
+  "data/fst/fst.combineTS/HWW.SBITBI.pops.fst",
   "data/fst/HWW.SCT.pops.fst",
-  "data/fst/HWW.SFBTFB.pops.fst",
-  "data/fst/SCT.SBITBI.pops.fst",
-  "data/fst/SCT.SFBTFB.pops.fst",
-  "data/fst/SFBTFB.SBITBI.pops.fst",
-  "data/fst/WESWET.SWSSWT.pops.fst")
+  "data/fst/fst.combineTS/HWW.SFBTFB.pops.fst",
+  "data/fst/fst.combineTS/SCT.SBITBI.pops.fst",
+  "data/fst/fst.combineTS/SCT.SFBTFB.pops.fst",
+  "data/fst/fst.combineTS/SFBTFB.SBITBI.pops.fst",
+  "data/fst/fst.combineTS/WESWET.SWSSWT.pops.fst")
 
 
 for (i in 1:length(filelist))

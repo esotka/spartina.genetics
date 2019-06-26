@@ -41,8 +41,12 @@ Based on NGSadmix analyses in angsd.
 Based on 5 independent runs of NGSadmix in angsd  
 * ***R/deltaK.R*** and ***output/deltaK.pdf***  
 
-### Figure: Fst  
-These are based on output from ngsFST.
+### Figure: Fst heatmap
+These are based on output from ngsFST. ***R/ProcessFstFiles.R** takes the pairwise files and creates estiamtes of mean Fst and geographic distance (using library(geosphere). This is used to create a heat-map.  
+* ***R/fst-heat-map-spartina.R*** and ***output/fst-heat-map-spartina.pdf***  
+
+### Figure: other Fst plots  
+These are based on direct output from ngsFST.  
 * ***R/FstViolin.R*** and ***output/FstViolin.pdf*** and ***output/FstMeans.pdf***  
 * ***R/Fst.morePlots.pdf*** and ***output/Fst.morePlots.pdf***
 
