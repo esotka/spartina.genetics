@@ -28,14 +28,11 @@ Based on genotype likelihoods of individuals embedded in the .mpgl file.  Uses t
 
 ### Figure: admixture plots  
 Based on NGSadmix analyses in angsd.  
-"R/ngsAdmix.pretty.R"  
-"output/ngsAdmix.pretty.pdf"  
-"R/ngsAdmix.T.S.POPS.pretty.R"  
-"output/ngsAdmix.T.S.POPS.pretty.pdf"  
+"R/ngsAdmix.pretty.R" and "output/ngsAdmix.pretty.pdf"  - all sites and 309 individuals  
+"R/ngsAdmix.T.S.POPS.pretty.R" and "output/ngsAdmix.T.S.POPS.pretty.pdf" - only the 6 marshes in which tall-vs-short occurs.   
 
 ### Figure: Lnl and deltaK of admixture plots  
 Based on 5 independent runs of NGSadmix in angsd  
-"R/deltaK.R"  
-"output/deltaK.pdf"  
+"R/deltaK.R"and "output/deltaK.pdf"  
 
 
