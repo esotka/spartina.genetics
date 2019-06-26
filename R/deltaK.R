@@ -5,14 +5,14 @@ ks <- c("k02","k03","k04","k05","k06","k07","k08","k09","k10",
         "k16")#,"k17","k18","k19","k20")
 
 #ks <- c("k01","k02","k03","k04","k05","k06","k07","k08","k09")#,"k10")
-filename <- list.files(path="data/",pattern=".log")
+filename <- list.files(path="data/admix.runs.ALLPOPS/",pattern=".log")
 lnl <- c()
 for (k in 1:length(ks))
 {
   filename.k <- filename[grep(pattern=ks[k],filename)]
   for (i in 1:length(filename.k))
   {
-    liketmp <- readLines(paste("data/",filename.k[i],sep=""))
+    liketmp <- readLines(paste("data/admix.runs.ALLPOPS/",filename.k[i],sep=""))
     liketmp <- liketmp[grep(pattern = "best like=",liketmp)]
     #print(filename.k[i])#;print(liketmp)
     lnl <- rbind(lnl,

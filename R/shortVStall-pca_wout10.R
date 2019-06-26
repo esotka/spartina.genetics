@@ -34,7 +34,7 @@ filelist <- c("SWS.SWT.pops.fst",
 # FST is the per-site FST value, Pvar is the probability for the site of being variable.
 for (i in 1:length(filelist))
 {
-tmp <- read.table(paste("data/SvT/",as.character(filelist[i]),sep=""))
+tmp <- read.table(paste("data/fst/",as.character(filelist[i]),sep=""))
 tmp <- tmp[1:nloci,]
 tmp[is.na(tmp[,4]),4] <- 0
 tmp[tmp[,4]<0,4] <- 0 ### set all FST <0 to 0

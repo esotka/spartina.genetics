@@ -62,8 +62,8 @@ for (i in 1:6)
     }
   ### histogram
   tmp <- c()
-  print(paste("data/",f[i],sep=""))
-  tmp <- read.delim(paste("data/",f[i],sep=""),sep=" ",header = F)[,-(k+1)]
+  print(paste("data/admix.runs.ALLPOPS/",f[i],sep=""))
+  tmp <- read.delim(paste("data/admix.runs.ALLPOPS/",f[i],sep=""),sep=" ",header = F)[,-(k+1)]
   tmpids <- read.delim(paste("data/",fid[i],sep=""),sep=" ",header = F)
   site1 <- substr(as.character(tmpids[,1]),1,3)
   siteNICE <- c(siteNICE.sh[i],siteNICE.ta[i])

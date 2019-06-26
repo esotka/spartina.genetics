@@ -1,7 +1,8 @@
 rm(list=ls())
 library(fields)
-pdf('output/ngsAdmix.pretty.pdf',width=8,height=8)
-par(mfrow=c(1,16),mar=c(0,0,0,0),xpd = TRUE)
+pdf('output/ngsAdmix.pretty.pdf',width=8.5,height=8)
+#quartz(width=8.5,height=8)
+par(mfrow=c(1,17),mar=c(0,0,0,0),xpd = TRUE)
 ids <- read.csv('data/allpops_individualIDs_subset.csv')[,2]
 pop <- substr(ids,1,3)
 meta <- read.csv('data/Spartina_SNP_SiteID.csv')
@@ -16,7 +17,8 @@ stateorder.txt <- c("FL","SC","NC","RI","MA","NH")
 stateorder <- match(state,stateorder.txt)
 state <- state[order(siteorder)]
 
-filelist <- c("k03.qopt",
+filelist <- c("k02run01.qopt",
+              "k03.qopt",
               "k04.qopt",
               "k05.qopt",
               "k06run01.qopt",
@@ -30,7 +32,7 @@ filelist <- c("k03.qopt",
               "k14run01.qopt",
               "k15run01.qopt",
               "k16run01.qopt")
-ks = 3:16
+ks = 2:16
 
 
 
@@ -55,6 +57,7 @@ kcol <- c("black",
           "firebrick",
           "forestgreen")
 colorder <- list(
+  c(1,2), # ks=3
   c(1,2,3), #ks=3
   c(3,4,1,2), #ks=4
   c(5,1,3,4,2), #ks=5
@@ -73,7 +76,7 @@ colorder <- list(
 
 for (k in 1:length(ks))
 {
-  dat <- read.delim(paste("data/runs/",filelist[k],sep=""),sep=" ",header = F)
+  dat <- read.delim(paste("data/admix.runs.ALLPOPS/",filelist[k],sep=""),sep=" ",header = F)
   dat <- dat[order(siteorder),]
   dat <- dat[,-(dim(dat)[2])]
   dat <- dat[,order(colorder[[k]])]
@@ -82,17 +85,17 @@ for (k in 1:length(ks))
   mtext(substr(ks[k],1,3),side=3,line=-1.5,at=.5)
  
   ### lines
-  for(i in 1:length(siteorder))
+  for(i in 1:length(siteorder.txt))
   {
-    #pop2 <- pop[order(siteorder)]
     x <- 1:dim(dat)[1]
     xtmp <- x[pop==siteorder.txt[i]]
     segments(1,max(xtmp),-0.05,max(xtmp),col="white")
-  }}
+  }
+  }
 fig <- barplot(t(dat),col="white",space=0,border=NA,xlab="",ylab="",
                names.arg = rep("",nrow(dat)),horiz=T)
 
-for(i in 1:length(siteorder))
+for(i in 1:length(siteorder.txt))
 {
   #pop2 <- pop[order(siteorder)]
   x <- 1:dim(dat)[1]

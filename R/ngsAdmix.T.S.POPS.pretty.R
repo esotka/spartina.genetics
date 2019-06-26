@@ -74,7 +74,7 @@ colorder <- list(
 
 for (k in 1:length(ks))
 {
-  dat <- read.delim(paste("data/runs.T.S.POPS/",filelist[k],sep=""),sep=" ",header = F)
+  dat <- read.delim(paste("data/admix.runs.TvS.POPS/",filelist[k],sep=""),sep=" ",header = F)
   dat <- dat[order(siteorder),]
   dat <- dat[,-(dim(dat)[2])]
   dat <- dat[,order(colorder[[k]])]
