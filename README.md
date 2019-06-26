@@ -43,6 +43,6 @@ Based on 5 independent runs of NGSadmix in angsd
 
 ### Figure: Fst  
 These are based on output from ngsFST.
-* ***R/FstViolin.R output/FstViolin.pdf output/FstMeans.pdf *** 
-* ***R/Fst.morePlots.pdf output/Fst.morePlots.pdf ***
+* ***R/FstViolin.R output/FstViolin.pdf output/FstMeans.pdf***  
+* ***R/Fst.morePlots.pdf output/Fst.morePlots.pdf***
 
