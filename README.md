@@ -4,7 +4,7 @@ These are the associated files and R code for the SNP dataset that are a part of
 
 ## data
 
-1) "inds/"  
+1) ***inds/***  
 Description: a set of files with individuals used in the analyses.  
 a. "allpops_individualIDs_subset.csv" - set of 309 individuals - all sites.  
 b. "indIDS.T.S.POPS.txt" - set of six marshes with tall-vs-short comparisons.  
