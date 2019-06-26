@@ -8,12 +8,12 @@ nloci = 2735
 pdf('output/FstViolin.pdf',width=5,height=4)
 ### short vs tall comparisons
 
-filelist.tvs <- c("data/SvT/FLS.FLT.pops.fst",
-              "data/SvT/SBI.TBI.pops.fst",
-              "data/SvT/SFB.TFB.pops.fst",
-              "data/SvT/RIS.RIT.pops.fst",
-              "data/SvT/SWS.SWT.pops.fst",
-              "data/SvT/WES.WET.pops.fst"
+filelist.tvs <- c("data/fst/FLS.FLT.pops.fst",
+              "data/fst/SBI.TBI.pops.fst",
+              "data/fst/SFB.TFB.pops.fst",
+              "data/fst/RIS.RIT.pops.fst",
+              "data/fst/SWS.SWT.pops.fst",
+              "data/fst/WES.WET.pops.fst"
 )
 fst.all <- c()
 for (i in 1:length(filelist.tvs))
@@ -29,13 +29,13 @@ for (i in 1:length(filelist.tvs))
   }
 ### sites <5km apart
 filelist <- c(
-  "data/SvT/HWW.SBITBI.pops.fst",
-  "data/SvT/HWW.SCT.pops.fst",
-  "data/SvT/HWW.SFBTFB.pops.fst",
-  "data/SvT/SCT.SBITBI.pops.fst",
-  "data/SvT/SCT.SFBTFB.pops.fst",
-  "data/SvT/SFBTFB.SBITBI.pops.fst",
-  "data/SvT/WESWET.SWSSWT.pops.fst")
+  "data/fst/HWW.SBITBI.pops.fst",
+  "data/fst/HWW.SCT.pops.fst",
+  "data/fst/HWW.SFBTFB.pops.fst",
+  "data/fst/SCT.SBITBI.pops.fst",
+  "data/fst/SCT.SFBTFB.pops.fst",
+  "data/fst/SFBTFB.SBITBI.pops.fst",
+  "data/fst/WESWET.SWSSWT.pops.fst")
 
 
 for (i in 1:length(filelist))

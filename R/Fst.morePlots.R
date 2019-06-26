@@ -7,12 +7,12 @@ nloci = 2735
 
 ### short vs tall comparisons
 
-filelist.tvs <- c("data/SvT/FLS.FLT.pops.fst",
-                  "data/SvT/SBI.TBI.pops.fst",
-                  "data/SvT/SFB.TFB.pops.fst",
-                  "data/SvT/RIS.RIT.pops.fst",
-                  "data/SvT/SWS.SWT.pops.fst",
-                  "data/SvT/WES.WET.pops.fst"
+filelist.tvs <- c("data/fst/FLS.FLT.pops.fst",
+                  "data/fst/SBI.TBI.pops.fst",
+                  "data/fst/SFB.TFB.pops.fst",
+                  "data/fst/RIS.RIT.pops.fst",
+                  "data/fst/SWS.SWT.pops.fst",
+                  "data/fst/WES.WET.pops.fst"
 )
 fst.all <- c()
 for (i in 1:length(filelist.tvs))
@@ -28,13 +28,13 @@ for (i in 1:length(filelist.tvs))
 }
 ### sites <5km apart
 filelist.5 <- c(
-  "data/SvT/HWW.SBITBI.pops.fst",
-  "data/SvT/HWW.SCT.pops.fst",
-  "data/SvT/HWW.SFBTFB.pops.fst",
-  "data/SvT/SCT.SBITBI.pops.fst",
-  "data/SvT/SCT.SFBTFB.pops.fst",
-  "data/SvT/SFBTFB.SBITBI.pops.fst",
-  "data/SvT/WESWET.SWSSWT.pops.fst")
+  "data/fst/HWW.SBITBI.pops.fst",
+  "data/fst/HWW.SCT.pops.fst",
+  "data/fst/HWW.SFBTFB.pops.fst",
+  "data/fst/SCT.SBITBI.pops.fst",
+  "data/fst/SCT.SFBTFB.pops.fst",
+  "data/fst/SFBTFB.SBITBI.pops.fst",
+  "data/fst/WESWET.SWSSWT.pops.fst")
 
 for (i in 1:length(filelist.5))
 {
@@ -49,12 +49,12 @@ for (i in 1:length(filelist.5))
 }
 
 filelist.15 <- c(
-  "data/SvT/FJS.HWW.pops.fst",
-  "data/SvT/FJS.SBITBI.pops.fst",
-  "data/SvT/FJS.SCT.pops.fst",
-  "data/SvT/FJS.SFBTFB.pops.fst",
-  "data/SvT/NHH.SWSSWT.pops.fst",
-  "data/SvT/NHH.WESWET.pops.fst")
+  "data/fst/FJS.HWW.pops.fst",
+  "data/fst/FJS.SBITBI.pops.fst",
+  "data/fst/FJS.SCT.pops.fst",
+  "data/fst/FJS.SFBTFB.pops.fst",
+  "data/fst/NHH.SWSSWT.pops.fst",
+  "data/fst/NHH.WESWET.pops.fst")
 
 for (i in 1:length(filelist.15))
 {
