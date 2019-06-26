@@ -39,10 +39,10 @@ Based on NGSadmix analyses in angsd.
 
 ### Figure: Lnl and deltaK of admixture plots  
 Based on 5 independent runs of NGSadmix in angsd  
-* ***R/deltaK.R***and ***output/deltaK.pdf***  
+* ***R/deltaK.R*** and ***output/deltaK.pdf***  
 
 ### Figure: Fst  
 These are based on output from ngsFST.
-* ***R/FstViolin.R output/FstViolin.pdf output/FstMeans.pdf***  
-* ***R/Fst.morePlots.pdf output/Fst.morePlots.pdf***
+* ***R/FstViolin.R*** and ***output/FstViolin.pdf*** and ***output/FstMeans.pdf***  
+* ***R/Fst.morePlots.pdf*** and ***output/Fst.morePlots.pdf***
 
