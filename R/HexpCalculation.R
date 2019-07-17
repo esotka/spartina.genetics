@@ -24,3 +24,9 @@ stats$se <- stats$sd/sqrt(stats$n)
 print(stats)
 write.csv(stats,"output/Hexp.csv")
 
+stats$lat <- meta$lat[match(rownames(stats),meta$Site_ID)]
+pdf('output/Hexp~lat.pdf')
+print(xyplot(xbar~lat,data=stats,type=c("p","r")))
+dev.off()
+
+print(summary(lm(xbar~lat,data=stats)))

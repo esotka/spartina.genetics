@@ -1,6 +1,8 @@
 # process heterozygosity estimate from realSFS and angsd
 # http://www.popgen.dk/angsd/index.php/Heterozygosity
 
+rm(list=ls())
+meta <- read.csv('data/Spartina_SNP_SiteID.csv')
 filelist <- list.files('data/Hobs/') # est.ml files. "For diploid single samples the hetereo zygosity is simply second value in the SFS/AFS" 
 out <- c()
 for (i in 1:length(filelist))
@@ -15,3 +17,10 @@ stats <- data.frame(xbar=tapply(out$het,out$site,mean,na.rm=T),
 stats$se <- stats$sd/sqrt(stats$n)
 print(stats)
 write.csv(stats,"output/Hobs.csv")
+
+stats$lat <- meta$lat[match(rownames(stats),meta$Site_ID)]
+pdf('output/Hobs~lat.pdf')
+print(xyplot(xbar~lat,data=stats,type=c("p","r")))
+dev.off()
+
+print(summary(lm(xbar~lat,data=stats)))
