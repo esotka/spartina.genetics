@@ -74,6 +74,6 @@ These are analyses of expected heterozygosity, taking the allele frequencies as 
 These are analyses of RDA (basically PCA) and loci associated with TvS.  
 * ***R/rda.R*** and ***output/rda.pdf***: figure of x=RDA (tall vs short) and y=PC1.  
 * ***output/candidateLoci.Rda***: a list of loci that extend 2.5 SD away  
-* ***output/candidateLoci.summary.txt***: a table that summarizes overlap between candidate loci among 6 populuations  
-
+* ***output/candidateLoci.summary.txt***: a table that summarizes overlap between candidate loci among 6 populuations (loci outside of SD = 2.5)  
+* ***output/NOTcandidateLoci.summary.txt***: a table that summarizes overlap between loci that were NOT outliers.  
 

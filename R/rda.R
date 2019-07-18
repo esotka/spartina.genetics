@@ -4,6 +4,7 @@
 ### list of candidate loci ###
 rm(list=ls())
 all.loci <- list()
+all.loci.NOTcandidates <- list()
 pdf("output/rda.pdf")
 library(psych)
 library(vegan)
@@ -66,14 +67,19 @@ outliers <- function(x,z){
 
 cand1 <- outliers(load.rda[,1],2.5) # 2.5 SD == outlier
 all.loci[[i]] <- names(cand1)
-
+all.loci.NOTcandidates[[i]] <- colnames(tall.short.imp)[!colnames(tall.short.imp)%in%names(cand1)]
 }
 dev.off()
 names(all.loci) <- c("FL",'SC-BI',"SC-FB","RI","MA-WE","MA-SW")
+names(all.loci.NOTcandidates) <- c("FL",'SC-BI',"SC-FB","RI","MA-WE","MA-SW")
 save(all.loci,file = "output/candidateLoci.Rda")
+save(all.loci.NOTcandidates,file = "output/NOTcandidateLoci.Rda")
 library(gplots)
 out <- venn(all.loci,show.plot=F,intersections=F)
 write.table(out,"output/candidateLoci.summary.txt",quote=F,row.names=F)
+outNO <- venn(all.loci.NOTcandidates,show.plot=F,intersections=F)
+write.table(outNO,"output/NOTcandidateLoci.summary.txt",quote=F,row.names=F)
+
 
 ### other
 # library(snpStat)
