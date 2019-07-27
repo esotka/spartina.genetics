@@ -37,6 +37,9 @@ Description: est.ml files from the "angsd -dosaf 1 -gl 1". "For diploid single s
 10) ***rda/***  
 Description: beagle file + list of individuals + list of loci for each of the 6 marshes (tall vs short)  
 
+11) ***misc/phenotypeFigs.zip***  
+Description: Experiment and greenhouse dataset to make figures in main text.  
+
 ### Figure: PCAs  
 Based on genotype likelihoods of individuals embedded in the .mpgl file.  Uses the prcomp() to generate PCAs. there are four versions:  
 * ***R/map of spartina sites.R*** and ***output/map of spartina sites.pdf*** - this includes all sites, and is coupled with a map of the east coast of the US.  
