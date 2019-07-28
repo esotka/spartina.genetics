@@ -15,6 +15,12 @@ stats <- data.frame(xbar=tapply(out$het,out$site,mean,na.rm=T),
                  sd=tapply(out$het,out$site,sd,na.rm=T),
                  n=as.numeric(table(out$site)))
 stats$se <- stats$sd/sqrt(stats$n)
+siteorder.txt <-     c("FLS","FLT","SFB","TFB","SBI","TBI","FJS","HWW","SCT","NCC",
+                       "RIS","RIT","SWS","SWT","WES","WET","NHH")
+siteorderNICE.txt <- c("FLS","FLT","SCFS","SCFT","SCBS","SCBT","SCFJ","SC2","SC3","NC1",
+                       "RIS","RIT","MASS","MAST","MAWS","MAWT","NH1")
+
+stats$sitenamesNICE <- siteorderNICE.txt[match(rownames(stats),siteorder.txt)]
 print(stats)
 write.csv(stats,"output/Hobs.csv")
 
