@@ -1,0 +1,9 @@
+Input: lname=t.s.pops.beagle.gz nPop=19, fname=(null) qname=(null) outfiles=k19run16
+Setup: seed=1560917033 nThreads=2 method=1
+Convergence: maxIter=2000 tol=0.000010 tolLike50=0.100000 dymBound=0
+Filters: misTol=0.050000 minMaf=0.050000 minLrt=0.000000 minInd=0
+Input file has dim: nsites=2735 nind=216
+Input file has dim (AFTER filtering): nsites=2603 nind=216
+	[ALL done] cpu-time used =  91.35 sec
+	[ALL done] walltime used =  46.00 sec
+best like=-333348.422185 after 650 iterations
