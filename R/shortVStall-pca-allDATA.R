@@ -5,6 +5,7 @@
 pdf('output/shortVStall-pca-allDATA.pdf',width=8,height=12)
 par(mfrow=c(3,2))
 library(RColorBrewer)
+library(vegan)
 
 meta <- read.csv('data/Spartina_SNP_SiteID.csv')
 gprob<- read.table('data/spartinaNov2017.called.subset.mpgl')
@@ -26,7 +27,9 @@ for (i in 1:6)
   tmp <- gmat[,pop==sh[i] | pop==ta[i]]
   pop.tmp <- substr(colnames(tmp),1,3); pop.tmp <- factor(pop.tmp)
   pc.cr <- prcomp(t(tmp))
-  out <- rbind(out,data.frame(site[i],PC1=summary(eigenvals(pc.cr))[2,1],PC2=summary(eigenvals(pc.cr))[2,2]))
+  anosim.p=anosim(t(tmp),pop.tmp)$signif ### anosim
+  anosim.stat=anosim(t(tmp),pop.tmp)$statistic
+  out <- rbind(out,data.frame(site[i],PC1=summary(eigenvals(pc.cr))[2,1],PC2=summary(eigenvals(pc.cr))[2,2],anosim.stat,anosim.p))
   col.sub <- c("red","black")[pop.tmp]
   plot(pc.cr$x[,1],pc.cr$x[,2],cex=0,main=site[i],xlab="PCA axis 1",ylab="PCA Axis 2")
   points(pc.cr$x[,1],pc.cr$x[,2],pch=20,cex=2,col=col.sub)

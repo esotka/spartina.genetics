@@ -4,7 +4,7 @@
 rm(list=ls())
 pdf('output/shortVStall-pca_wout10.pdf',width=12,height=12)
 par(mfrow=c(3,4))
-library(RColorBrewer);library(reshape)
+library(RColorBrewer);library(reshape); library(vegan)
 
 ### PCA
 meta <- read.csv('data/Spartina_SNP_SiteID.csv')
@@ -62,7 +62,7 @@ md.90$sites <- factor(md.90$sites)
 
 
 
-
+out.alldata <- c(); out.90 <- c()
 for (i in 1:6)
 {
 
@@ -70,6 +70,9 @@ for (i in 1:6)
   tmp <- gmat[,pop==sh[i] | pop==ta[i]]
   pop.tmp <- substr(colnames(tmp),1,3); pop.tmp <- factor(pop.tmp)
   pc.cr <- prcomp(t(tmp))
+  anosim.p=anosim(t(tmp),pop.tmp)$signif
+  anosim.stat=anosim(t(tmp),pop.tmp)$statistic
+  out.alldata <- rbind(out.alldata,data.frame(site[i],PC1=summary(eigenvals(pc.cr))[2,1],PC2=summary(eigenvals(pc.cr))[2,2],anosim.stat,anosim.p))
   col.sub <- c("red","black")[pop.tmp]
   par(mar=c(5,5,5,2))
   plot(pc.cr$x[,1],pc.cr$x[,2],cex=0,xlab="Axis 1",ylab="Axis 2")
@@ -90,6 +93,9 @@ for (i in 1:6)
   loci.to.use <- md.90$locusnum[md.90$sites==filelist[i] & !is.na(md.90$value)]
   tmp <- tmp[loci.to.use,]  
   pc.cr <- prcomp(t(tmp))
+  anosim.p=anosim(t(tmp),pop.tmp)$signif
+  anosim.stat=anosim(t(tmp),pop.tmp)$statistic
+  out.90 <- rbind(out.90,data.frame(site[i],PC1=summary(eigenvals(pc.cr))[2,1],PC2=summary(eigenvals(pc.cr))[2,2],anosim.stat,anosim.p))
   col.sub <- c("red","black")[pop.tmp]
   par(mar=c(5,5,5,2))
   plot(pc.cr$x[,1],pc.cr$x[,2],cex=0,xlab="Axis 1",ylab="Axis 2")
@@ -105,5 +111,6 @@ for (i in 1:6)
   mtext(site[i],cex=1.5,line=2)
   mtext("10% outliers removed",line=.5)
 }
-
+print(out.alldata)
+print(out.90)
 dev.off()
