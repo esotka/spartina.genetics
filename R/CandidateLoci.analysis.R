@@ -40,3 +40,15 @@ print(cand.unique <- dim(all3[rowSums(all3[,-1])==1,])[1])
 ### how many NON candidate loci are there?
 ### 769/904 (85%)
 print(NOTcand.shared <- dim(all3[rowSums(all3[,-1])==0,])[1])
+
+### SUMMARY
+#Number of loci	% of 904 loci	Type
+#769	85.1%	Non-outlier
+#135	14.9%	Outliers
+#122	13.5%	-1 marsh
+#13	1.4%	-2 marshes
+#1	0.1%	-3 marshes
+#0	0.0%	-4-6 marshes
+
+
+
