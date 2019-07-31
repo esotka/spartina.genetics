@@ -42,7 +42,9 @@ print(cand.unique <- dim(all3[rowSums(all3[,-1])==1,])[1])
 print(NOTcand.shared <- dim(all3[rowSums(all3[,-1])==0,])[1])
 
 ### SUMMARY
-#Number of loci	% of 904 loci	Type
+#Number of loci	% of 904 loci
+## support = in calls, a genotype indicated when there is difference between genotypes of > 5*Lnl
+## 2.5 SD
 #769	85.1%	Non-outlier
 #135	14.9%	Outliers
 #122	13.5%	-1 marsh
@@ -50,5 +52,37 @@ print(NOTcand.shared <- dim(all3[rowSums(all3[,-1])==0,])[1])
 #1	0.1%	-3 marshes
 #0	0.0%	-4-6 marshes
 
+#Number of loci	% of 2178 loci 
+## support = in calls, a genotype indicated when there is difference between genotypes of > 2*Lnl
+# 2.5 SD
+#1887	86.3%	Non-outlier
+#291	13.4%	Outliers
+#271	12.4%	-1 marsh
+#19	0.9%	-2 marshes
+#0	0.0%	-3 marshes
+#1	<0.1%	-4 marshes
+#0  0.0%  -5-6 marshes
 
+#Number of loci	% of 2178 loci 
+## support = in calls, a genotype indicated when there is difference between genotypes of > 2*Lnl
+# 3 SD
+#2104	96.6%	Non-outlier
+#74	3.2%	Outliers
+#70	3.0%	-1 marsh
+#4	0.2%	-2 marshes
+#0	0.0%	-3 marshes
+#0	0.0%	-4 marshes
+#0  0.0%  -5-6 marshes
+
+#Number of loci	% of 2178 loci 
+## support = in calls, a genotype indicated when there is difference between genotypes of > 2*Lnl
+# 2 SD
+#1472	67.5%	Non-outlier
+#706	32.4%	Outliers
+#532	24.4%	-1 marsh
+#147	6.7%	-2 marshes
+#25	1.1%	-3 marshes
+#1	<0.1%	-4 marshes
+#0  0.0%  -5 marshes
+#1  <0.1%  -6 marshes
 

@@ -19,10 +19,10 @@ for(i in 1:6)
 {
 
 ### tall datasets
-beagle_gl(fn=Afn[i],bamlist = Aind[i],rowstart=0,nrows=-1,support=log(5)) -> Acalls
+beagle_gl(fn=Afn[i],bamlist = Aind[i],rowstart=0,nrows=-1,support=log(2)) -> Acalls
 Acalls.tr <- data.frame(t(Acalls[,-1]))
 ### short datasets
-beagle_gl(fn=Bfn[i],bamlist=Bind[i],rowstart=0,nrows=-1,support=log(5)) -> Bcalls
+beagle_gl(fn=Bfn[i],bamlist=Bind[i],rowstart=0,nrows=-1,support=log(2)) -> Bcalls
 Bcalls.tr <- data.frame(t(Bcalls[,-1]))
 
 tall.short.inds <- c(readLines(Aind[i]),readLines(Bind[i]))
@@ -65,7 +65,7 @@ outliers <- function(x,z){
   x[x < lims[1] | x > lims[2]]               # locus names in these tails
 }
 
-cand1 <- outliers(load.rda[,1],2.5) # 2.5 SD == outlier
+cand1 <- outliers(load.rda[,1],2) # 2.5 SD == outlier
 all.loci[[i]] <- names(cand1)
 all.loci.NOTcandidates[[i]] <- colnames(tall.short.imp)[!colnames(tall.short.imp)%in%names(cand1)]
 }
