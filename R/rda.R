@@ -65,9 +65,13 @@ outliers <- function(x,z){
   x[x < lims[1] | x > lims[2]]               # locus names in these tails
 }
 
-cand1 <- outliers(load.rda[,1],2) # 2.5 SD == outlier
-all.loci[[i]] <- names(cand1)
-all.loci.NOTcandidates[[i]] <- colnames(tall.short.imp)[!colnames(tall.short.imp)%in%names(cand1)]
+#cand1 <- outliers(load.rda[,1],2) # 2.5 SD == outlier
+cand.threshold <- sort(abs(load.rda),decreasing = T)[1:20]# top 20 loci
+cand1 <- rownames(load.rda)[abs(load.rda)>=min(cand.threshold)]
+#all.loci[[i]] <- names(cand1)
+#all.loci.NOTcandidates[[i]] <- colnames(tall.short.imp)[!colnames(tall.short.imp)%in%names(cand1)]
+all.loci[[i]] <- cand1
+all.loci.NOTcandidates[[i]] <- colnames(tall.short.imp)[!colnames(tall.short.imp)%in%cand1]
 }
 dev.off()
 names(all.loci) <- c("FL",'SC-BI',"SC-FB","RI","MA-WE","MA-SW")

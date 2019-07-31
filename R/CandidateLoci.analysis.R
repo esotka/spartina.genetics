@@ -86,3 +86,14 @@ print(NOTcand.shared <- dim(all3[rowSums(all3[,-1])==0,])[1])
 #0  0.0%  -5 marshes
 #1  <0.1%  -6 marshes
 
+#Number of loci	% of 2178 loci 
+## support = in calls, a genotype indicated when there is difference between genotypes of > 2*Lnl
+# top 20 loci
+#2072	95%	Non-outlier
+#106	5%	Outliers
+#100		-1 marsh
+#6		-2 marshes
+#0		-3 marshes
+#0		-4 marshes
+#0    -5 marshes
+#0    -6 marshes
