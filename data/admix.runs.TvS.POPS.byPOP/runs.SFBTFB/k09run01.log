@@ -1,0 +1,9 @@
+Input: lname=SFBTFB.beagle.gz nPop=9, fname=(null) qname=(null) outfiles=k09run01
+Setup: seed=1511193522 nThreads=2 method=1
+Convergence: maxIter=2000 tol=0.000010 tolLike50=0.100000 dymBound=0
+Filters: misTol=0.050000 minMaf=0.050000 minLrt=0.000000 minInd=0
+Input file has dim: nsites=2735 nind=29
+Input file has dim (AFTER filtering): nsites=1955 nind=29
+	[ALL done] cpu-time used =  5.88 sec
+	[ALL done] walltime used =  3.00 sec
+best like=-37695.149128 after 550 iterations

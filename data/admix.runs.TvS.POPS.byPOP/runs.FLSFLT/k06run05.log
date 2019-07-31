@@ -1,0 +1,9 @@
+Input: lname=FL.beagle.gz nPop=6, fname=(null) qname=(null) outfiles=k06run05
+Setup: seed=1511193248 nThreads=2 method=1
+Convergence: maxIter=2000 tol=0.000010 tolLike50=0.100000 dymBound=0
+Filters: misTol=0.050000 minMaf=0.050000 minLrt=0.000000 minInd=0
+Input file has dim: nsites=2710 nind=38
+Input file has dim (AFTER filtering): nsites=1327 nind=38
+	[ALL done] cpu-time used =  3.16 sec
+	[ALL done] walltime used =  2.00 sec
+best like=-33638.021253 after 400 iterations

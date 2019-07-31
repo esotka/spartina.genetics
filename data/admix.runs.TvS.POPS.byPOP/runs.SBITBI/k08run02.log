@@ -1,0 +1,9 @@
+Input: lname=SBITBI.beagle.gz nPop=8, fname=(null) qname=(null) outfiles=k08run02
+Setup: seed=1511196659 nThreads=2 method=1
+Convergence: maxIter=2000 tol=0.000010 tolLike50=0.100000 dymBound=0
+Filters: misTol=0.050000 minMaf=0.050000 minLrt=0.000000 minInd=0
+Input file has dim: nsites=2734 nind=34
+Input file has dim (AFTER filtering): nsites=1929 nind=34
+	[ALL done] cpu-time used =  8.06 sec
+	[ALL done] walltime used =  5.00 sec
+best like=-46195.901585 after 700 iterations

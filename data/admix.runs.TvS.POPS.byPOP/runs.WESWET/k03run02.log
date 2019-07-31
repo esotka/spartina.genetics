@@ -1,0 +1,9 @@
+Input: lname=WESWET.beagle.gz nPop=3, fname=(null) qname=(null) outfiles=k03run02
+Setup: seed=1511197824 nThreads=2 method=1
+Convergence: maxIter=2000 tol=0.000010 tolLike50=0.100000 dymBound=0
+Filters: misTol=0.050000 minMaf=0.050000 minLrt=0.000000 minInd=0
+Input file has dim: nsites=2732 nind=39
+Input file has dim (AFTER filtering): nsites=1567 nind=39
+	[ALL done] cpu-time used =  0.58 sec
+	[ALL done] walltime used =  0.00 sec
+best like=-41886.988666 after 91 iterations

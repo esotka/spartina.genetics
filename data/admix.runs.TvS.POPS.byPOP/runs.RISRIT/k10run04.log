@@ -1,0 +1,9 @@
+Input: lname=RISRIT.beagle.gz nPop=10, fname=(null) qname=(null) outfiles=k10run04
+Setup: seed=1511197996 nThreads=2 method=1
+Convergence: maxIter=2000 tol=0.000010 tolLike50=0.100000 dymBound=0
+Filters: misTol=0.050000 minMaf=0.050000 minLrt=0.000000 minInd=0
+Input file has dim: nsites=2735 nind=36
+Input file has dim (AFTER filtering): nsites=1671 nind=36
+	[ALL done] cpu-time used =  4.68 sec
+	[ALL done] walltime used =  2.00 sec
+best like=-38324.360458 after 400 iterations
