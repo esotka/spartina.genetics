@@ -17,7 +17,7 @@ all.md <- melt(all,id=c("pop","loci"))
 all2 <- cast(all.md,loci~pop)
 all2 <- as.data.frame(all2)
 all2 <- all2[complete.cases(all2[,-1]),]
-### 904 loci have been analyzed across all 6 marshes
+
 all3 <- data.frame()
 for(i in 1:dim(all2)[1])
 {

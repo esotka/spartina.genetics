@@ -65,6 +65,13 @@ Acalls <- beagle_gl(fn="data/309inds.beagle.gz",
           bamlist = "data/inds/allpops_individualIDs_subset.txt",
           rowstart=0,nrows=-1,support=log(2)) 
 Acalls.tr <- data.frame(t(Acalls[,-1]))
+### tall vs short; 6 marshes
+st <- c("SWS","WES","RIS","SBI","SFB","FLS",
+        "SWT","WET","RIT","TBI","TFB","FLT")
+st.reg <- factor(reg[pop%in%st])
+st.subpop <- factor(pop[pop%in%st])
+st.SiteName <- factor(meta$Site.Name[match(st.subpop,meta$Site_ID)])
+st.ids <- ids[pop%in%st]
 Acalls.tr <- Acalls.tr[pop%in%st,]### subset
 ## impute
 Acalls.tr2 <- c()
@@ -81,11 +88,38 @@ Acalls.tmp <- data.frame(Inds=st.ids,
                         Ploidy=2,
                         Format="BiA",
                         Acalls.impute)
-colnames(Acalls.tmp) <- loci
+colnames(Acalls.tmp)[5:dim(Acalls.tmp)[2]] <- loci
 
 Acalls.stampp <- stamppConvert(Acalls.tmp,"r")
 ### Nei's genetic distance
 d <- stamppNeisD(Acalls.stampp, FALSE)
-pop <- factor(Acalls.stampp$Pop)
+#pop <- factor(Acalls.stampp$Pop)
 print(m2 <- pegas::amova(d~st.SiteName/st.subpop,nperm=1000))
-print(adonis2(d ~ st.SiteName/st.subpop,permutations = 100))
+write.pegas.amova(m2,"output/amova.6marshes.V2.csv")
+#print(adonis2(d ~ st.SiteName/st.subpop,permutations = 100))
+
+###### tall vs short; within SC ###
+st <- c("SBI","SFB",
+        "TBI","TFB")
+st.reg <- factor(reg[pop%in%st])
+st.subpop <- factor(pop[pop%in%st])
+st.SiteName <- factor(meta$Site.Name[match(st.subpop,meta$Site_ID)])
+SC.tmp <- Acalls.tmp[Acalls.tmp$Pop%in%st,]### subset
+SC.stampp <- stamppConvert(SC.tmp,"r")
+d <- stamppNeisD(SC.stampp, FALSE)
+#pop <- factor(Acalls.stampp$Pop)
+print(m2 <- pegas::amova(d~st.SiteName/st.subpop,nperm=1000))
+write.pegas.amova(m2,"output/amova.SC.V2.csv")
+
+###### tall vs short; within MA ###
+st <- c("SWS","WES",
+        "SWT","WET")
+st.reg <- factor(reg[pop%in%st])
+st.subpop <- factor(pop[pop%in%st])
+st.SiteName <- factor(meta$Site.Name[match(st.subpop,meta$Site_ID)])
+MA.tmp <- Acalls.tmp[Acalls.tmp$Pop%in%st,]### subset
+MA.stampp <- stamppConvert(MA.tmp,"r")
+d <- stamppNeisD(MA.stampp, FALSE)
+#pop <- factor(Acalls.stampp$Pop)
+print(m2 <- pegas::amova(d~st.SiteName/st.subpop,nperm=1000))
+write.pegas.amova(m2,"output/amova.MA.V2.csv")
