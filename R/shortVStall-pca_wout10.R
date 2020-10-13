@@ -109,7 +109,7 @@ for (i in 1:6)
   }
   print(pc.cr$x[1:3,1:3])
   mtext(site[i],cex=1.5,line=2)
-  mtext("10% outliers removed",line=.5)
+  mtext("10% removed",line=.5)
 }
 print(out.alldata)
 print(out.90)
